@@ -27,6 +27,9 @@ public class JugadorService {
         jugadorR.save(j3);
         jugadorR.save(j4);
         jugadorR.save(j5);
+
+        System.out.print("Buscar a StephenCurry: ");
+        System.out.println(jugadorR.findByNombreContains("StephenCurry"));
     }
 
 }
