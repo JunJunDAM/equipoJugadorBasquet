@@ -1,7 +1,5 @@
 package com.example.domain;
 
-import com.sun.javafx.beans.IDProperty;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -12,8 +10,8 @@ import java.time.LocalDate;
 public class Jugador {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
-    private String nombre;
+    private String id_Jugador;
+    private String nombre_Jugador;
     private LocalDate fechaNacimiento;
     private int canastas;
     private int asistencias;
@@ -23,8 +21,8 @@ public class Jugador {
     private Equipo pertenece;
 
     public Jugador(String id, String nombre, LocalDate fechaNacimiento, int canastas, int asistencias, int rebotes, String posicion) {
-        this.id = id;
-        this.nombre = nombre;
+        this.id_Jugador = id;
+        this.nombre_Jugador = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.canastas = canastas;
         this.asistencias = asistencias;
@@ -35,8 +33,8 @@ public class Jugador {
     @Override
     public String toString() {
         return "Jugador{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
+                "id_Jugador='" + id_Jugador + '\'' +
+                ", nombre_Jugador='" + nombre_Jugador + '\'' +
                 ", fechaNacimiento=" + fechaNacimiento +
                 ", canastas=" + canastas +
                 ", asistencias=" + asistencias +
@@ -46,20 +44,20 @@ public class Jugador {
                 '}';
     }
 
-    public String getId() {
-        return id;
+    public String getId_Jugador() {
+        return id_Jugador;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_Jugador(String id_Jugador) {
+        this.id_Jugador = id_Jugador;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_Jugador() {
+        return nombre_Jugador;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre_Jugador(String nombre_Jugador) {
+        this.nombre_Jugador = nombre_Jugador;
     }
 
     public LocalDate getFechaNacimiento() {

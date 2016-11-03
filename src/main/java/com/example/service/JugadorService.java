@@ -29,7 +29,7 @@ public class JugadorService {
         jugadorR.save(j5);
 
         System.out.print("Buscar a StephenCurry: ");
-        System.out.println(jugadorR.findByNombreContains("StephenCurry"));
+        System.out.println(jugadorR.findByNombre_JugadorContains("StephenCurry"));
     }
 
 }
