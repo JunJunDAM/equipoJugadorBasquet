@@ -15,13 +15,12 @@ import java.time.LocalDate;
 @Service
 public class JugadorService {
     @Autowired private JugadorRepository jugadorR;
-    @Autowired private EquipoRepository equipoR;
     public void jugadores(){
-        Jugador j1 = new Jugador("30", "StephenCurry", LocalDate.of(1988, 3, 14), 22, 7, 4, "base");
-        Jugador j2 = new Jugador("13", "JamesHarden", LocalDate.of(1989, 9, 26), 25, 6, 5, "escolta");
-        Jugador j3 = new Jugador("35", "KevinDurant", LocalDate.of(1988, 9, 29), 27, 3, 7, "alero");
-        Jugador j4 = new Jugador("32", "BlakeGriffin", LocalDate.of(1989, 3, 16), 24, 4, 10, "alaPivot");
-        Jugador j5 = new Jugador("15", "DeMarcusCousins", LocalDate.of(1990, 8, 13), 23, 0, 12, "pivot");
+        Jugador j1 = new Jugador("30", "StephenCurry", LocalDate.of(1988, 3, 14), 22, 7, 4, "Base");
+        Jugador j2 = new Jugador("13", "JamesHarden", LocalDate.of(1989, 9, 26), 25, 6, 5, "Escolta");
+        Jugador j3 = new Jugador("35", "KevinDurant", LocalDate.of(1988, 9, 29), 27, 3, 7, "Alero");
+        Jugador j4 = new Jugador("32", "BlakeGriffin", LocalDate.of(1989, 3, 16), 24, 4, 10, "AlaPivot");
+        Jugador j5 = new Jugador("15", "DeMarcusCousins", LocalDate.of(1990, 8, 13), 23, 0, 12, "Pivot");
         jugadorR.save(j1);
         jugadorR.save(j2);
         jugadorR.save(j3);
@@ -29,7 +28,17 @@ public class JugadorService {
         jugadorR.save(j5);
 
         System.out.print("Buscar a StephenCurry: ");
-        System.out.println(jugadorR.findByNombre_JugadorContains("StephenCurry"));
+        System.out.println(jugadorR.findByNombreJugadorContains("StephenCurry"));
+        System.out.print("Buscar por canastas mayores que 15: ");
+        System.out.println(jugadorR.findByCanastasGreaterThanEqual(15));
+        int min = 3;
+        int max = 100;
+        System.out.print("Buscar por asistencias entre " + min + " y " + max + " :");
+        System.out.println(jugadorR.findByAsistenciasBetween(min, max));
+        System.out.print("Buscar por posicon [Alero]: ");
+        System.out.println(jugadorR.findByPosicionContains("Alero"));
+        System.out.println("Buscar por fecha nacimiento menor que [15/5/1989]");
+        System.out.println(jugadorR.findByFechaNacimientoLessThan(LocalDate.of(1989,5,15)));
     }
 
 }
