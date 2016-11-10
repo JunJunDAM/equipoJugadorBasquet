@@ -18,7 +18,7 @@ public class Jugador {
     private int rebotes;
     private String posicion;
     @ManyToOne
-    private Equipo pertenece;
+    private Equipo equipo;
 
     public Jugador(String id, String nombre, LocalDate fechaNacimiento, int canastas, int asistencias, int rebotes, String posicion) {
         this.idJugador = id;
@@ -40,7 +40,7 @@ public class Jugador {
                 ", asistencias=" + asistencias +
                 ", rebotes=" + rebotes +
                 ", posicion='" + posicion + '\'' +
-                ", pertenece=" + pertenece +
+                ", equipo=" + equipo +
                 '}';
     }
 
@@ -98,5 +98,13 @@ public class Jugador {
 
     public void setPosicion(String posicion) {
         this.posicion = posicion;
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 }

@@ -22,19 +22,20 @@ public class EquipoService {
         Equipo e3 = new Equipo("3", "ChicagoBulls", "Chicago", LocalDate.of(1966, 1, 1));
         Equipo e4 = new Equipo("4", "OklahomaCityThunder", "OklahomaCity", LocalDate.of(1967, 1, 1));
         Equipo e5 = new Equipo("5", "ClevelandCavaliers", "Cleverland", LocalDate.of(1967, 1, 1));
+
         equipoR.save(e1);
         equipoR.save(e2);
         equipoR.save(e3);
         equipoR.save(e4);
         equipoR.save(e5);
 
-        System.out.print("Equipos de una localidad determinada []: ");
-        System.out.println(equipoR.findByLocalidadContains(""));
-        System.out.print("Buscar jugadores de un equipo determinado []: ");
-        System.out.println();
-        System.out.print("Buscar jugadores de una posicion determinada []: ");
-        System.out.println();
-        System.out.print("Buscar jugador con mas canastas []: ");
-        System.out.println();
+        System.out.print("Equipos de una localidad determinada [Oakland]: ");
+        System.out.println(equipoR.findByLocalidadContains("Oakland"));
+        System.out.print("Buscar jugadores de un equipo determinado [GoldenStateWarriors]: ");
+        System.out.println(jugadorR.findByEquipoNombre("GoldenStateWarriors"));
+        System.out.print("Buscar jugadores de un equipo y una posicion determinada [GoldenStateWarriors][Base]: ");
+        System.out.println(jugadorR.findByEquipoNombreAndPosicion("GoldenStateWarriors", "Base"));
+        System.out.print("Buscar jugador con mas canastas de un equipo [OklahomaCity]: ");
+        System.out.println(equipoR.canastasJugadorEquipo("OklahomaCity"));
     }
 }

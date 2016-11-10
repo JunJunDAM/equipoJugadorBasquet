@@ -12,24 +12,22 @@ public class Equipo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String idEquipo;
-    private String nombreEquipo;
+    private String nombre;
     private String localidad;
     private LocalDate fechaCreacion;
-    private List players;
 
-    public Equipo(String idEquipo, String nombreEquipo, String localidad, LocalDate fechaCreacion) {
+    public Equipo(String idEquipo, String nombre, String localidad, LocalDate fechaCreacion) {
         this.idEquipo = idEquipo;
-        this.nombreEquipo = nombreEquipo;
+        this.nombre = nombre;
         this.localidad = localidad;
         this.fechaCreacion = fechaCreacion;
-        this.players = null;
     }
 
     @Override
     public String toString() {
         return "Equipo{" +
                 "idEquipo='" + idEquipo + '\'' +
-                ", nombreEquipo='" + nombreEquipo + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", localidad='" + localidad + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
                 '}';
@@ -43,7 +41,7 @@ public class Equipo {
         Equipo equipo = (Equipo) o;
 
         if (idEquipo != null ? !idEquipo.equals(equipo.idEquipo) : equipo.idEquipo != null) return false;
-        if (nombreEquipo != null ? !nombreEquipo.equals(equipo.nombreEquipo) : equipo.nombreEquipo != null)
+        if (nombre != null ? !nombre.equals(equipo.nombre) : equipo.nombre != null)
             return false;
         if (localidad != null ? !localidad.equals(equipo.localidad) : equipo.localidad != null) return false;
         return fechaCreacion != null ? fechaCreacion.equals(equipo.fechaCreacion) : equipo.fechaCreacion == null;
@@ -52,7 +50,7 @@ public class Equipo {
     @Override
     public int hashCode() {
         int result = idEquipo != null ? idEquipo.hashCode() : 0;
-        result = 31 * result + (nombreEquipo != null ? nombreEquipo.hashCode() : 0);
+        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
         result = 31 * result + (localidad != null ? localidad.hashCode() : 0);
         result = 31 * result + (fechaCreacion != null ? fechaCreacion.hashCode() : 0);
         return result;
@@ -66,12 +64,12 @@ public class Equipo {
         this.idEquipo = idEquipo;
     }
 
-    public String getNombreEquipo() {
-        return nombreEquipo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreEquipo(String nombreEquipo) {
-        this.nombreEquipo = nombreEquipo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getLocalidad() {
