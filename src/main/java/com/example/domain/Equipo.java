@@ -2,6 +2,7 @@ package com.example.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by usu22 on 02/11/2016.
@@ -14,12 +15,14 @@ public class Equipo {
     private String nombreEquipo;
     private String localidad;
     private LocalDate fechaCreacion;
+    private List players;
 
     public Equipo(String idEquipo, String nombreEquipo, String localidad, LocalDate fechaCreacion) {
         this.idEquipo = idEquipo;
         this.nombreEquipo = nombreEquipo;
         this.localidad = localidad;
         this.fechaCreacion = fechaCreacion;
+        this.players = null;
     }
 
     @Override
