@@ -17,11 +17,11 @@ public class JugadorService {
     @Autowired private JugadorRepository jugadorR;
     @Autowired private EquipoRepository equipoR;
     public void jugadores(){
-        Jugador j1 = new Jugador("30", "StephenCurry", LocalDate.of(1988, 3, 14), 22, 7, 4, "Base");
-        Jugador j2 = new Jugador("13", "JamesHarden", LocalDate.of(1989, 9, 26), 25, 6, 5, "Escolta");
-        Jugador j3 = new Jugador("35", "KevinDurant", LocalDate.of(1988, 9, 29), 27, 3, 7, "Alero");
-        Jugador j4 = new Jugador("32", "BlakeGriffin", LocalDate.of(1989, 3, 16), 24, 4, 10, "AlaPivot");
-        Jugador j5 = new Jugador("15", "DeMarcusCousins", LocalDate.of(1990, 8, 13), 23, 0, 12, "Pivot");
+        Jugador j1 = new Jugador( "StephenCurry", LocalDate.of(1988, 3, 14), 22, 7, 4, "Base");
+        Jugador j2 = new Jugador( "JamesHarden", LocalDate.of(1989, 9, 26), 25, 6, 5, "Escolta");
+        Jugador j3 = new Jugador( "KevinDurant", LocalDate.of(1988, 9, 29), 27, 3, 7, "Alero");
+        Jugador j4 = new Jugador( "BlakeGriffin", LocalDate.of(1989, 3, 16), 24, 4, 10, "AlaPivot");
+        Jugador j5 = new Jugador( "DeMarcusCousins", LocalDate.of(1990, 8, 13), 23, 0, 12, "Pivot");
 
         Equipo Warriors = equipoR.findByNombre("GoldenStateWarriors");
         j1.setEquipo(Warriors);

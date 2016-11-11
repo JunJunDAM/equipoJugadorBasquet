@@ -17,11 +17,11 @@ public class EquipoService {
     @Autowired private JugadorRepository jugadorR;
     @Autowired private EquipoRepository equipoR;
     public void equipos(){
-        Equipo e1 = new Equipo("1", "GoldenStateWarriors", "Oakland", LocalDate.of(1946, 1, 1));
-        Equipo e2 = new Equipo("2", "LosAngelesLakers", "LosAngeles", LocalDate.of(1946, 1, 1));
-        Equipo e3 = new Equipo("3", "ChicagoBulls", "Chicago", LocalDate.of(1966, 1, 1));
-        Equipo e4 = new Equipo("4", "OklahomaCityThunder", "OklahomaCity", LocalDate.of(1967, 1, 1));
-        Equipo e5 = new Equipo("5", "ClevelandCavaliers", "Cleverland", LocalDate.of(1967, 1, 1));
+        Equipo e1 = new Equipo("GoldenStateWarriors", "Oakland", LocalDate.of(1946, 1, 1));
+        Equipo e2 = new Equipo( "LosAngelesLakers", "LosAngeles", LocalDate.of(1946, 1, 1));
+        Equipo e3 = new Equipo("ChicagoBulls", "Chicago", LocalDate.of(1966, 1, 1));
+        Equipo e4 = new Equipo("OklahomaCityThunder", "OklahomaCity", LocalDate.of(1967, 1, 1));
+        Equipo e5 = new Equipo("ClevelandCavaliers", "Cleverland", LocalDate.of(1967, 1, 1));
 
         equipoR.save(e1);
         equipoR.save(e2);

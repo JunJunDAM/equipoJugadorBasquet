@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class Jugador {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String idJugador;
+    private Long idJugador;
     private String nombreJugador;
     private LocalDate fechaNacimiento;
     private int canastas;
@@ -20,14 +20,16 @@ public class Jugador {
     @ManyToOne
     private Equipo equipo;
 
-    public Jugador(String id, String nombre, LocalDate fechaNacimiento, int canastas, int asistencias, int rebotes, String posicion) {
-        this.idJugador = id;
+    public Jugador(String nombre, LocalDate fechaNacimiento, int canastas, int asistencias, int rebotes, String posicion) {
         this.nombreJugador = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.canastas = canastas;
         this.asistencias = asistencias;
         this.rebotes = rebotes;
         this.posicion = posicion;
+    }
+
+    public Jugador() {
     }
 
     @Override
@@ -44,11 +46,11 @@ public class Jugador {
                 '}';
     }
 
-    public String getIdJugador() {
+    public Long getIdJugador() {
         return idJugador;
     }
 
-    public void setIdJugador(String idJugador) {
+    public void setIdJugador(Long idJugador) {
         this.idJugador = idJugador;
     }
 

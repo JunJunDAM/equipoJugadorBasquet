@@ -2,7 +2,6 @@ package com.example.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 /**
  * Created by usu22 on 02/11/2016.
@@ -11,16 +10,18 @@ import java.util.List;
 public class Equipo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String idEquipo;
+    private Long idEquipo;
     private String nombre;
     private String localidad;
     private LocalDate fechaCreacion;
 
-    public Equipo(String idEquipo, String nombre, String localidad, LocalDate fechaCreacion) {
-        this.idEquipo = idEquipo;
+    public Equipo(String nombre, String localidad, LocalDate fechaCreacion) {
         this.nombre = nombre;
         this.localidad = localidad;
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public Equipo() {
     }
 
     @Override
@@ -56,11 +57,11 @@ public class Equipo {
         return result;
     }
 
-    public String getIdEquipo() {
+    public Long getIdEquipo() {
         return idEquipo;
     }
 
-    public void setIdEquipo(String idEquipo) {
+    public void setIdEquipo(Long idEquipo) {
         this.idEquipo = idEquipo;
     }
 

@@ -18,8 +18,6 @@ import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 public class EquipoBasquetApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(EquipoBasquetApplication.class, args);
 		ConfigurableApplicationContext context= SpringApplication.run(EquipoBasquetApplication.class, args);
 
 		context.getBean(EquipoService.class).equipos();
