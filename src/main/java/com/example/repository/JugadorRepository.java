@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
  * Created by usu22 on 02/11/2016.
  */
 public interface JugadorRepository extends JpaRepository<Jugador, Long>{
-    List<Jugador> findByNombreJugadorContains(String nombre);
+    List<Jugador> findByNombreJugador(String nombre);
     List<Jugador> findByCanastasGreaterThanEqual(Integer canastas);
     List<Jugador> findByAsistenciasBetween(Integer min, Integer max);
     List<Jugador> findByPosicionContains(String posicion);

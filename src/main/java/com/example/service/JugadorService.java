@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by usu22 on 02/11/2016.
@@ -45,7 +46,7 @@ public class JugadorService {
         jugadorR.save(j5);
 
         System.out.print("Buscar a StephenCurry: ");
-        System.out.println(jugadorR.findByNombreJugadorContains("StephenCurry"));
+        System.out.println(jugadorR.findByNombreJugador("StephenCurry"));
         System.out.print("Buscar por canastas mayores que 15: ");
         System.out.println(jugadorR.findByCanastasGreaterThanEqual(15));
         int min = 3;
@@ -57,9 +58,20 @@ public class JugadorService {
         System.out.println("Buscar por fecha nacimiento menor que [15/5/1989]");
         System.out.println(jugadorR.findByFechaNacimientoLessThan(LocalDate.of(1989,5,15)));
         System.out.println("Media de canastas, asistencias y rebotes de los jugadores");
-        System.out.println(jugadorR.mediaJugadoresPorPosicion());
+        mediaJugadoresPorPosicion(jugadorR.mediaJugadoresPorPosicion());
+
+
         System.out.println("Maximo, minimo de canastas, asistencias y rebores de los jugadores");
         System.out.println(jugadorR.maxMinJugadoresPorPosicion());
     }
+    private void mediaJugadoresPorPosicion(List<Object[]> statisticsList) {
+        for ( Object[] statistic: statisticsList){
+            System.out.println("Posición: "+statistic[0]);
+            System.out.println("canastas AVG= "+statistic[1]);
+            System.out.println("asistencias AVG= "+statistic[2]);
+            System.out.println("rebotes AVG= "+statistic[3]+System.lineSeparator());
+        }
+    }
+
 
 }
